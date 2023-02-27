@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Mars Rover Photos</title>
+</head>
+
+<body>
+    <h2>
+        <a href="/" style="text-decoration: none;" class="text-dark p-3">←</a>
+    </h2>
+    <div data-th-each="roverAttr: ${rover}">
+        <h1 data-th-text="'Name: ' + ${roverAttr.name}" class="text-center"></h1>
+        <p th:text="'Earth Date: ' + ${roverAttr.earthDate}" class="text-center"></p>
+        <div class="d-flex flex-column justify-content-center mw-50 p-3">
+            <img data-th-src="${roverAttr.imgUrl}">
+            <p data-th-text="'Full Name: ' + ${roverAttr.fullName}"></p>
+            <p data-th-text="'Rover Name: ' + ${roverAttr.roverName}"></p>
+            <p data-th-text="'Launch Date: ' + ${roverAttr.launchDate}"></p>
+            <p data-th-text="'Landing Date: ' + ${roverAttr.landingDate}"></p>
+            <p data-th-text="'Status: ' + ${roverAttr.status}"></p>
+
+        </div>
+    </div>
+</body>
+
+</html>
